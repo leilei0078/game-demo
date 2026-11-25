@@ -1,0 +1,36 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+const browser=await chromium.launch({channel:'chrome',headless:true,args:['--use-angle=metal']});
+const page=await browser.newPage({viewport:{width:1440,height:960}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const clickWorld=async(p,button='left',y=0)=>{const q=await page.evaluate(({p,y})=>window.__workers.project(p,y),{p,y});await page.mouse.click(q.x,q.y,{button});};
+try{
+ await page.goto('http://localhost:5173/workers.html');await page.waitForSelector('#field[data-ready=true]');await page.waitForTimeout(350);
+ assert.match(await page.locator('#activity-summary').innerText(),/空闲 12/);
+ await page.getByRole('button',{name:'全选 12 人',exact:true}).click();await page.getByRole('button',{name:'伐木',exact:true}).click();
+ const jobs=await page.evaluate(()=>window.__workers.sim.workers.map(w=>w.source));assert.equal(jobs.length,12);assert.ok(jobs.includes(101)&&jobs.includes(102));
+ await page.screenshot({path:'output/workers/quick-jobs.png'});
+ await page.waitForFunction(()=>window.__workers.sim.inventory.wood>=12,null,{timeout:45000});
+ await page.screenshot({path:'output/workers/dispatch.png'});
+ await page.getByRole('button',{name:'重置',exact:true}).click();await page.waitForSelector('#field[data-ready=true]');await page.waitForTimeout(250);
+ await page.getByRole('button',{name:'1 号',exact:true}).click();await clickWorld({x:2,z:0},'right');
+ await page.getByRole('button',{name:'采矿',exact:true}).click({modifiers:['Shift']});
+ await page.waitForSelector('#orders:not([hidden])');assert.match(await page.locator('#orders').innerText(),/矿石/);
+ await page.getByRole('button',{name:'清空后续',exact:true}).click();assert.equal(await page.evaluate(()=>window.__workers.sim.workers[0].queue.length),0);await page.waitForTimeout(250);
+ const before=await page.evaluate(()=>window.__workers.project({x:6,z:3}));
+ await page.getByRole('button',{name:'放大视角',exact:true}).click();const after=await page.evaluate(()=>window.__workers.project({x:6,z:3}));assert.ok(Math.abs(after.x-720)>Math.abs(before.x-720));
+ await clickWorld({x:1,z:1},'right');await page.waitForFunction(()=>window.__workers.sim.workers[0].phase==='idle',null,{timeout:30000});
+ assert.ok(await page.evaluate(()=>Math.hypot(window.__workers.sim.workers[0].x-1,window.__workers.sim.workers[0].z-1)<.3));
+ await page.keyboard.press('ArrowRight');const shifted=await page.evaluate(()=>window.__workers.project({x:6,z:3}));assert.ok(shifted.x<after.x);
+ await page.getByRole('button',{name:'全景',exact:true}).click();const reset=await page.evaluate(()=>window.__workers.project({x:6,z:3}));assert.ok(Math.abs(reset.x-before.x)<1);
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(350);await page.screenshot({path:'output/workers/polish-mobile.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),390);
+ await page.getByRole('button',{name:'放大视角',exact:true}).click();await page.screenshot({path:'output/workers/polish-mobile-zoom.png'});
+ await page.getByRole('button',{name:'平移',exact:true}).click();
+ const beforePan=await page.evaluate(()=>window.__workers.project({x:1,z:1}));
+ await page.mouse.move(195,300);await page.mouse.down();await page.mouse.move(230,315,{steps:6});await page.mouse.up();
+ const afterPan=await page.evaluate(()=>window.__workers.project({x:1,z:1}));assert.ok(afterPan.x>beforePan.x+20);
+ await page.getByRole('button',{name:'平移',exact:true}).click();
+ assert.deepEqual(errors,[]);await fs.writeFile('output/workers/polish-check.json',JSON.stringify({pass:true,checks:['personnel summary','balanced quick jobs','actual deposit','queued work visible','clear later orders preserves current','camera zoom','click after zoom','pan','reset view','mobile layout'],errors},null,2));
+ console.log('PASS: quick jobs, receipts, queued work UI, zoom, pan, click mapping, mobile');
+}finally{await browser.close();}

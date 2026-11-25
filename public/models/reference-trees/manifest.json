@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "units": "meters",
+  "styles": [
+    {
+      "id": "LayeredSpruce",
+      "title": "层叠云杉",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 5274,
+          "dimensions": [
+            4.599,
+            4.647,
+            7.701
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/LayeredSpruce_LOD0.glb"
+        },
+        {
+          "level": 1,
+          "triangles": 1934,
+          "dimensions": [
+            4.643,
+            4.535,
+            7.701
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/LayeredSpruce_LOD1.glb"
+        },
+        {
+          "level": 2,
+          "triangles": 870,
+          "dimensions": [
+            4.602,
+            4.31,
+            7.701
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/LayeredSpruce_LOD2.glb"
+        }
+      ]
+    },
+    {
+      "id": "FullFir",
+      "title": "丰冠冷杉",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 5574,
+          "dimensions": [
+            3.934,
+            3.945,
+            7.55
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/FullFir_LOD0.glb"
+        },
+        {
+          "level": 1,
+          "triangles": 2194,
+          "dimensions": [
+            3.944,
+            3.85,
+            7.55
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/FullFir_LOD1.glb"
+        },
+        {
+          "level": 2,
+          "triangles": 910,
+          "dimensions": [
+            3.934,
+            3.664,
+            7.55
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/FullFir_LOD2.glb"
+        }
+      ]
+    },
+    {
+      "id": "BonsaiPine",
+      "title": "风雕盆景松",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 8532,
+          "dimensions": [
+            5.705,
+            5.864,
+            7.015
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/BonsaiPine_LOD0.glb"
+        },
+        {
+          "level": 1,
+          "triangles": 4246,
+          "dimensions": [
+            5.705,
+            5.673,
+            7.015
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/BonsaiPine_LOD1.glb"
+        },
+        {
+          "level": 2,
+          "triangles": 1230,
+          "dimensions": [
+            5.023,
+            4.954,
+            7.015
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/BonsaiPine_LOD2.glb"
+        }
+      ]
+    },
+    {
+      "id": "AncientBroadleaf",
+      "title": "古树阔叶",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 5352,
+          "dimensions": [
+            6.918,
+            6.188,
+            8.327
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/AncientBroadleaf_LOD0.glb"
+        },
+        {
+          "level": 1,
+          "triangles": 2894,
+          "dimensions": [
+            6.899,
+            5.952,
+            8.327
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/AncientBroadleaf_LOD1.glb"
+        },
+        {
+          "level": 2,
+          "triangles": 1386,
+          "dimensions": [
+            6.976,
+            6.084,
+            8.327
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/reference-trees/AncientBroadleaf_LOD2.glb"
+        }
+      ]
+    }
+  ]
+}

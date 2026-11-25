@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "units": "meters",
+  "styles": [
+    {
+      "id": "VerdantOak",
+      "title": "丰叶橡树",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 12296,
+          "dimensions": [
+            6.134,
+            5.847,
+            7.831
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/VerdantOak_LOD0.glb",
+          "bytes": 545856,
+          "vertices": 13743,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 4322,
+          "dimensions": [
+            6.054,
+            5.623,
+            7.763
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/VerdantOak_LOD1.glb",
+          "bytes": 280052,
+          "vertices": 4769,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 790,
+          "dimensions": [
+            5.398,
+            4.947,
+            7.73
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/VerdantOak_LOD2.glb",
+          "bytes": 163104,
+          "vertices": 814,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "SpreadingOak",
+      "title": "舒冠橡树",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 12296,
+          "dimensions": [
+            6.983,
+            6.852,
+            7.824
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/SpreadingOak_LOD0.glb",
+          "bytes": 545868,
+          "vertices": 13743,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 4322,
+          "dimensions": [
+            6.931,
+            6.668,
+            7.75
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/SpreadingOak_LOD1.glb",
+          "bytes": 280060,
+          "vertices": 4769,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 790,
+          "dimensions": [
+            6.002,
+            6.044,
+            7.73
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/SpreadingOak_LOD2.glb",
+          "bytes": 163116,
+          "vertices": 814,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "YoungOak",
+      "title": "林间幼树",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 9320,
+          "dimensions": [
+            4.637,
+            4.199,
+            5.791
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/YoungOak_LOD0.glb",
+          "bytes": 446480,
+          "vertices": 10392,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 3296,
+          "dimensions": [
+            4.612,
+            4.133,
+            5.745
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/YoungOak_LOD1.glb",
+          "bytes": 245736,
+          "vertices": 3626,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 634,
+          "dimensions": [
+            4.009,
+            3.567,
+            5.71
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/leafy-trees/YoungOak_LOD2.glb",
+          "bytes": 157600,
+          "vertices": 649,
+          "primitives": 2
+        }
+      ]
+    }
+  ],
+  "bundle": {
+    "url": "/models/leafy-trees/LeafyTrees.glb",
+    "bytes": 1637100
+  }
+}

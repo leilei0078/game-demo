@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#eff0e9" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23304c3c' d='M16 2 4 18h7l-5 7h8v6h4v-6h8l-5-7h7Z'/%3E%3C/svg%3E" />
+    <title>树木研究室 · Tree Studies</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <a class="brand" href="/mistwood.html"><span class="brand-icon">↟</span><span>MISTWOOD <small>ASSET STUDIES / 01</small></span></a>
+        <nav><a href="/mistwood.html">返回密林</a><a href="/versions/classic/">保留原版</a><a class="download" href="/downloads/UnityTreeStudies.zip" download>下载 Unity 资产 <span>↗</span></a></nav>
+      </header>
+      <main>
+        <div class="intro"><div><p class="eyebrow">FORM / FOLIAGE / PERFORMANCE</p><h1>让森林，有自己的性格。</h1><p class="subtitle">新增参考图方向：柔冠童话松。圆润厚冠、黄绿层叠，旋转看看细节。</p></div><div class="edition"><span class="status-dot"></span>真实模型 · 可交互预览<small>PC + 中端手机 / 米制资产 / 三级 LOD</small></div></div>
+        <section class="studio" aria-label="树木三维交互预览">
+          <div class="toolbar"><div class="segmented" aria-label="预览模式"><button data-mode="compare" aria-pressed="false">五款对比</button><button data-mode="single" aria-pressed="true">单树细看</button><button data-mode="forest" aria-pressed="false">森林测试</button></div><div class="tools"><label>细节 <select id="lod"><option value="auto">自动 LOD</option><option value="0">LOD 0 · 近景</option><option value="1">LOD 1 · 中景</option><option value="2">LOD 2 · 远景</option></select></label><button id="wire" aria-pressed="false">线框</button><button id="reset" title="重置视角">↺ <span>重置</span></button></div></div>
+          <div id="viewport"><canvas id="scene" aria-label="拖动旋转，滚轮缩放的树木模型"></canvas><div id="loading">正在载入树木模型…</div><div id="load-error" hidden></div></div>
+          <div class="stage-footer"><span id="stage-note">01 — 04 / 统一比例 · 统一光照</span><span class="gesture">拖动旋转 <i>·</i> 滚轮缩放 <i>·</i> 双指平移</span><span id="live-stats">加载中</span></div>
+          <div id="forest-options" hidden><label>树木数量 <select id="tree-count"><option>25</option><option selected>100</option><option>300</option></select></label><span id="lod-distribution"></span><span>分区实例化 · 自动远景剔除</span></div>
+        </section>
+        <div class="style-grid" id="styles" aria-label="选择树木风格"></div>
+        <section class="asset-note"><div><span class="note-mark">↟</span><div><h2>好看的轮廓，也要轻得下来。</h2><p>每款树 2 个网格、2 个材质；共用 5 张 512² 贴图。三级 LOD、树干碰撞体和 Unity 导入工具随资产提供。</p></div></div><p>贴片树使用 Alpha Clip，叶片重叠仍会占用 GPU。右下角为主渲染统计，阴影另计；手机帧率需上机实测。</p></section>
+      </main>
+      <footer class="page-footer"><span>TREE STUDIES · 2026</span><span>当前密林与原版场景均已保留</span><a href="/downloads/UnityTreeStudies.zip" download>FBX / PNG / LOD SETUP ↗</a></footer>
+    </div>
+    <script type="module" src="/src/trees/main.ts"></script>
+  </body>
+</html>

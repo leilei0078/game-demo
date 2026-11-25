@@ -1,0 +1,1 @@
+.style-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.studio,#viewport{background:#1e302b}@media(max-width:750px){.style-grid{grid-template-columns:1fr}}#forest-options{background:#edf0e5;color:#314a38}#forest-options select{background:#fff;color:#314a38;border-color:#acb99c}

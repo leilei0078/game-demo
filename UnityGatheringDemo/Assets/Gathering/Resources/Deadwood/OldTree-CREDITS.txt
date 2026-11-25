@@ -1,0 +1,8 @@
+Old tree by evolveduk
+https://sketchfab.com/3d-models/old-tree-3cb4d59eb4844dc4802480e9ee53785e
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+Modifications for Gathering Demo: lengthened the lower trunk, adjusted the ground pivot,
+repaired winding, removed duplicate and disconnected twig cards, and applied a muted bark material.
+The main map import also increases height, broadens the lower trunk and narrows the upper crown.

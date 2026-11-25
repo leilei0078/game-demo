@@ -1,0 +1,42 @@
+node_modules/
+dist/
+*.blend1
+__pycache__/
+.DS_Store
+*.log
+
+# Generated renders, trial Unity copies, verification outputs, and derived local assets
+output/
+
+# Unity generated data
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/[Pp]rofiler[Cc]aptures/
+**/Assets/_Recovery/
+*.csproj
+*.sln
+
+# Purchased character model and textures are installed locally, not redistributed.
+/UnityGatheringDemo/Assets/Gathering/Resources/Farmer/*.fbx
+/UnityGatheringDemo/Assets/Gathering/Resources/Farmer/*.fbx.meta
+/UnityGatheringDemo/Assets/Gathering/Resources/Farmer/*.png
+/UnityGatheringDemo/Assets/Gathering/Resources/Farmer/*.png.meta
+
+# Locally licensed Medieval Marketplace trial assets.
+/UnityGatheringDemo/Assets/Gathering/Resources/MarketRack/
+/UnityGatheringDemo/Assets/Gathering/Resources/MarketRack.meta
+
+# Local Sketchfab survivor and its derived Unity resources.
+/UnityGatheringDemo/Assets/Gathering/Resources/Survivor/
+/UnityGatheringDemo/Assets/Gathering/Resources/Survivor.meta
+
+# Local adaptation of the Medieval Marketplace Basket_B prop.
+/UnityGatheringDemo/Assets/Gathering/Resources/WorkerGear/MarketP019/
+/UnityGatheringDemo/Assets/Gathering/Resources/WorkerGear/MarketP019.meta
+/output/p019-back-basket/*.blend
+/output/p019-back-basket/stone-v2/*.blend

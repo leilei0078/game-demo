@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "units": "meters",
+  "sourceAxes": "Blender Z up; runtime Y up",
+  "styles": [
+    {
+      "id": "FacetedFir",
+      "title": "块面冷杉",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 2148,
+          "dimensions": [
+            4.579,
+            4.638,
+            8.436
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/FacetedFir_LOD0.glb",
+          "bytes": 840424,
+          "vertices": 3883,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 1464,
+          "dimensions": [
+            4.418,
+            4.422,
+            8.436
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/FacetedFir_LOD1.glb",
+          "bytes": 799872,
+          "vertices": 2744,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 636,
+          "dimensions": [
+            4.271,
+            4.374,
+            8.436
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/FacetedFir_LOD2.glb",
+          "bytes": 754352,
+          "vertices": 1477,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "PaintedFir",
+      "title": "团簇冷杉",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 4572,
+          "dimensions": [
+            5.02,
+            5.164,
+            8.6
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/PaintedFir_LOD0.glb",
+          "bytes": 859448,
+          "vertices": 4023,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 2676,
+          "dimensions": [
+            5.016,
+            5.175,
+            8.6
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/PaintedFir_LOD1.glb",
+          "bytes": 801348,
+          "vertices": 2563,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 2012,
+          "dimensions": [
+            5.049,
+            5.229,
+            8.6
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/PaintedFir_LOD2.glb",
+          "bytes": 781012,
+          "vertices": 2052,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "NaturalPine",
+      "title": "贴片自然松",
+      "alphaClip": true,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 2560,
+          "dimensions": [
+            5.32,
+            5.21,
+            8.104
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/NaturalPine_LOD0.glb",
+          "bytes": 709528,
+          "vertices": 3342,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 1776,
+          "dimensions": [
+            4.823,
+            4.427,
+            8.104
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/NaturalPine_LOD1.glb",
+          "bytes": 668816,
+          "vertices": 2217,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 1142,
+          "dimensions": [
+            5.708,
+            5.261,
+            8.258
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/NaturalPine_LOD2.glb",
+          "bytes": 638320,
+          "vertices": 1383,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "OldOak",
+      "title": "团簇老橡树",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 3132,
+          "dimensions": [
+            6.455,
+            5.936,
+            7.85
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/OldOak_LOD0.glb",
+          "bytes": 824452,
+          "vertices": 3200,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 1836,
+          "dimensions": [
+            6.233,
+            5.901,
+            7.85
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/OldOak_LOD1.glb",
+          "bytes": 776156,
+          "vertices": 1934,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 814,
+          "dimensions": [
+            5.684,
+            5.194,
+            7.85
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/OldOak_LOD2.glb",
+          "bytes": 734592,
+          "vertices": 827,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "SoftPine",
+      "title": "柔冠童话松",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 4374,
+          "dimensions": [
+            5.194,
+            4.986,
+            8.438
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/SoftPine_LOD0.glb",
+          "bytes": 346716,
+          "vertices": 3014,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 2370,
+          "dimensions": [
+            5.031,
+            4.645,
+            8.438
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/SoftPine_LOD1.glb",
+          "bytes": 294144,
+          "vertices": 1747,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 1002,
+          "dimensions": [
+            4.545,
+            4.815,
+            8.438
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/trees/SoftPine_LOD2.glb",
+          "bytes": 255272,
+          "vertices": 789,
+          "primitives": 2
+        }
+      ]
+    }
+  ],
+  "bundle": {
+    "url": "/models/trees/TreeStudies.glb",
+    "bytes": 2513940
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "wayfarers-rest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "optimize": "node scripts/optimize.mjs",
+    "check:web": "node scripts/check-web.mjs",
+    "check:play": "node scripts/check-play.mjs",
+    "check:rts": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-rts-grid.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-rts-rules.mjs && node scripts/check-rts.mjs && node scripts/check-rts-grid-web.mjs",
+    "check:workers": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-rules.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-crowd.mjs && node scripts/check-workers.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-polish.mjs && node scripts/check-workers-polish-web.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-autonomy.mjs && node scripts/check-workers-autonomy-web.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-management.mjs && node scripts/check-workers-management-web.mjs",
+    "check:campaign": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-campaign-construction.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-campaign-rules.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-campaign-flow.mjs && npm run check:collection",
+    "check:collection": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-collection-rules.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-autonomy.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-workers-management.mjs && node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-logistics.mjs && node scripts/check-collection-web.mjs && node scripts/check-logistics-web.mjs && node scripts/check-worker-input-web.mjs && node scripts/check-direct-click-web.mjs && npm run check:orders",
+    "check:logistics": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-logistics.mjs && node scripts/check-logistics-web.mjs",
+    "check:input": "node scripts/check-worker-input-web.mjs && node scripts/check-direct-click-web.mjs",
+    "check:orders": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/check-order-feedback.mjs && node scripts/check-order-feedback-web.mjs"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.21.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.2.1",
+    "@gltf-transform/extensions": "^4.2.1",
+    "@gltf-transform/functions": "^4.2.1",
+    "@playwright/test": "^1.64.1",
+    "@types/three": "^0.180.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}

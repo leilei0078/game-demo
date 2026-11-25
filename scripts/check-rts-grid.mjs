@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {Campaign} from '../src/rts/sim.ts';
+import {footprint,snapBuilding} from '../src/rts/grid.ts';
+const s=new Campaign();s.units.forEach(u=>{u.x=22;u.z=22});s.wood=s.gold=999;
+const build='barracks',position={x:1.14,z:8.15},plan=s.placement(build,position);
+assert.equal(plan.reason,'');assert.equal(plan.cells.length,30);assert.deepEqual(plan.point,{x:1,z:8.5});
+assert.deepEqual(snapBuilding('barracks',{x:1.40,z:8.35}),plan.point);
+assert.equal(s.build(build,position,[s.workers[0].id]),true);const b=s.sites.at(-1);assert.equal(b.x,plan.point.x);assert.equal(b.z,plan.point.z);
+const stock=[s.wood,s.gold];assert.equal(s.build(build,position,[s.workers[0].id]),false);assert.deepEqual([s.wood,s.gold],stock);
+assert.ok(s.blocked({x:b.x,z:b.z}));const f=footprint(b.kind,b);
+assert.ok(s.blocked({x:f.maxX-.1,z:f.minZ+.1}),'矩形角落必须阻挡');
+const mixed=s.placement('house',{x:f.maxX+.8,z:b.z});assert.ok(mixed.cells.some(c=>!!c.reason)&&mixed.cells.some(c=>!c.reason),'预览区分受阻格与可用格');
+const farm=s.nodes.find(n=>n.kind==='food');assert.ok(s.placement('house',farm).cells.some(c=>c.reason.includes('麦田')));
+assert.ok(s.placement('house',{x:25,z:25}).cells.some(c=>c.reason.includes('边界')));
+s.sites=s.sites.filter(v=>v.id===b.id);s.nodes=[];
+const left=s.site('house',{x:-4,z:1},1),right=s.site('house',{x:1,z:1},1); // x=-2 … -1 is a one-meter corridor.
+assert.equal(footprint(right.kind,right).minX-footprint(left.kind,left).maxX,1);
+const path=s.route({x:-1.5,z:-5.5},{x:-1.5,z:5.5});assert.ok(path.some(p=>p.z>-1&&p.z<3&&Math.abs(p.x+1.5)<.01),'寻路通过保留的一格通道');
+const worker=s.workers[0];worker.x=-1.5;worker.z=-5.5;worker.nav='';for(let i=0;i<150;i++)s.walk(worker,{x:-1.5,z:5.5},1/30,3.8,.3);assert.ok(Math.hypot(worker.x+1.5,worker.z-5.5)<.4,'实际连续移动通过通道');
+b.hp=0;assert.equal(s.blocked({x:b.x,z:b.z}),false,'摧毁建筑后释放占地');
+console.log('PASS 网格吸附、30格预览与落点一致、重叠拒绝且不扣费、矩形阻挡、麦田保护、边界、一格通道寻路及通行、摧毁后释放');

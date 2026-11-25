@@ -1,0 +1,218 @@
+{
+  "version": 2,
+  "units": "meters",
+  "styles": [
+    {
+      "id": "SculptedSpruce",
+      "title": "雕叶云杉",
+      "alphaClip": false,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 23466,
+          "dimensions": [
+            7.635,
+            7.528,
+            8.651
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/SculptedSpruce_LOD0.glb",
+          "bytes": 2800720,
+          "vertices": 54252,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 8256,
+          "dimensions": [
+            7.841,
+            7.787,
+            8.651
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/SculptedSpruce_LOD1.glb",
+          "bytes": 1525332,
+          "vertices": 17248,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 3832,
+          "dimensions": [
+            6.86,
+            6.789,
+            8.651
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/SculptedSpruce_LOD2.glb",
+          "bytes": 1188220,
+          "vertices": 7543,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "LayeredFir",
+      "title": "密簇冷杉",
+      "alphaClip": true,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 12234,
+          "dimensions": [
+            7.812,
+            7.867,
+            8.758
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/LayeredFir_LOD0.glb",
+          "bytes": 2266524,
+          "vertices": 14000,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 5472,
+          "dimensions": [
+            7.659,
+            7.811,
+            8.743
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/LayeredFir_LOD1.glb",
+          "bytes": 1984544,
+          "vertices": 6456,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 2680,
+          "dimensions": [
+            7.322,
+            7.381,
+            8.899
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/LayeredFir_LOD2.glb",
+          "bytes": 1859628,
+          "vertices": 3076,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "WindsweptPine",
+      "title": "疏冠老松",
+      "alphaClip": true,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 6364,
+          "dimensions": [
+            6.93,
+            7.106,
+            9.076
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/WindsweptPine_LOD0.glb",
+          "bytes": 1980696,
+          "vertices": 6168,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 3174,
+          "dimensions": [
+            7.018,
+            6.524,
+            9.052
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/WindsweptPine_LOD1.glb",
+          "bytes": 1869416,
+          "vertices": 3289,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 1966,
+          "dimensions": [
+            7.278,
+            7.054,
+            9.33
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/WindsweptPine_LOD2.glb",
+          "bytes": 1822360,
+          "vertices": 2045,
+          "primitives": 2
+        }
+      ]
+    },
+    {
+      "id": "AncientOak",
+      "title": "曲干古橡",
+      "alphaClip": true,
+      "lods": [
+        {
+          "level": 0,
+          "triangles": 7036,
+          "dimensions": [
+            7.501,
+            7.473,
+            8.133
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/AncientOak_LOD0.glb",
+          "bytes": 2006152,
+          "vertices": 6838,
+          "primitives": 2
+        },
+        {
+          "level": 1,
+          "triangles": 3502,
+          "dimensions": [
+            7.186,
+            6.809,
+            8.152
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/AncientOak_LOD1.glb",
+          "bytes": 1882572,
+          "vertices": 3639,
+          "primitives": 2
+        },
+        {
+          "level": 2,
+          "triangles": 2154,
+          "dimensions": [
+            7.895,
+            7.697,
+            8.298
+          ],
+          "objects": 2,
+          "materials": 2,
+          "url": "/models/hero-trees/AncientOak_LOD2.glb",
+          "bytes": 1829872,
+          "vertices": 2245,
+          "primitives": 2
+        }
+      ]
+    }
+  ],
+  "bundle": {
+    "url": "/models/hero-trees/HeroTrees.glb",
+    "bytes": 6082856
+  }
+}

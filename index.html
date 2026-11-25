@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#162b29" />
+    <meta name="description" content="走近一座林间驿站。自由旋转、缩放，探索中世纪奇幻微缩场景。" />
+    <title>林间驿站 · Wayfarer's Rest</title>
+    <link rel="icon" type="image/svg+xml" href="/compass.svg" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene" aria-label="林间驿站三维场景。拖动旋转，滚轮缩放，点击物体查看介绍。" tabindex="0"></canvas>
+      <header>
+        <div class="identity">
+          <img class="compass" src="/compass.svg" alt="" />
+          <div><p class="eyebrow">A LITTLE WORLD TO WANDER</p><h1>林间驿站<span>Wayfarer's Rest</span></h1></div>
+        </div>
+        <div class="top-actions">
+          <a href="/play.html" style="color:#e9d6a3;text-decoration:none;font-size:12px;letter-spacing:1px;padding:10px 14px;border:1px solid #d2bc7944;border-radius:5px;background:#172b2566">进入游戏 · 青岬领 ↗</a>
+          <button id="daylight" class="round-label" aria-label="切换昼夜" aria-pressed="false" title="切换昼夜"><svg viewBox="0 0 24 24"><path d="M20.5 13.3A8.7 8.7 0 0 1 10.7 3.5 8.7 8.7 0 1 0 20.5 13.3Z"/></svg><span>入夜</span></button>
+          <button id="help-toggle" class="icon-button" aria-label="操作帮助" aria-expanded="false">?</button>
+        </div>
+      </header>
+      <section id="help" class="glass" hidden aria-label="操作帮助">
+        <p class="card-label">探索这片小天地</p>
+        <p>拖动旋转 · 滚轮缩放<br>右键拖动平移 · 点击物体查看<br>触屏单指旋转 · 双指缩放和平移</p>
+        <p class="help-keys"><kbd>1</kbd> 全景 <kbd>2</kbd> 小屋 <kbd>3</kbd> 营地<br><kbd>R</kbd> 复位 <kbd>N</kbd> 昼夜 <kbd>Esc</kbd> 关闭介绍</p>
+      </section>
+      <section id="detail" class="glass" hidden aria-live="polite">
+        <button id="detail-close" class="icon-button" aria-label="关闭介绍">×</button>
+        <p class="card-label" id="detail-label"></p><h2 id="detail-title"></h2><p id="detail-description"></p>
+      </section>
+      <div id="hover-label" hidden></div>
+      <footer>
+        <p class="gesture"><span class="gesture-icon">↔</span> 拖动探索 <span class="dot">·</span> 滚轮缩放 <span class="dot">·</span> 点击发现</p>
+        <nav class="view-controls" aria-label="场景视角">
+          <div class="presets"><button data-view="wide" aria-pressed="true">全景</button><button data-view="cottage" aria-pressed="false">小屋</button><button data-view="camp" aria-pressed="false">营地</button></div>
+          <span class="divider"></span>
+          <button id="orbit" class="icon-button" aria-label="自动环绕" aria-pressed="false" title="自动环绕"><svg viewBox="0 0 24 24"><path d="M19.1 8A8 8 0 1 0 20 14M19 3v5h-5"/></svg></button>
+          <button id="reset" class="icon-button" aria-label="重置视角" title="重置视角"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M6 9v11h12V9M10 20v-7h4v7"/></svg></button>
+        </nav>
+        <div class="world-status"><i></i><span id="time-label">林间 · 午后</span></div>
+      </footer>
+      <section id="loading" aria-live="polite"><img src="/compass.svg" alt="" /><p class="eyebrow">WAYFARER'S REST</p><h2>正在走进森林</h2><div class="loading-track"><i id="loading-bar"></i></div><p id="loading-status">准备场景…</p></section>
+      <section id="error" hidden role="alert"><h2>暂时无法打开这片小天地</h2><p id="error-message"></p><button id="retry">重新加载</button></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

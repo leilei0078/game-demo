@@ -1,0 +1,7 @@
+:root{background:#14222a;color:#e7e5d9}
+.edition-link{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;color:#cad2cf;text-decoration:none;font-size:11px;letter-spacing:.07em;border:1px solid #d9dece25;border-radius:24px;background:#14212b8c;backdrop-filter:blur(12px)}
+.edition-link:hover{color:#ffe5b6;border-color:#d9ba7866}
+.glass{background:#15242beb}.view-controls{background:#14242cd9}
+#loading,#error{background:#182830}
+.identity h1{text-shadow:0 2px 22px #001018aa}
+@media(max-width:540px){.edition-link{padding:0 9px;min-height:35px;font-size:10px}.identity h1{font-size:21px}.identity .eyebrow{font-size:6px}.compass{width:28px;height:28px}.identity{gap:8px}.top-actions{gap:3px}}

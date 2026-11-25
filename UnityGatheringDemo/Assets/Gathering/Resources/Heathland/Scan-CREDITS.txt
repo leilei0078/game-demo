@@ -1,0 +1,10 @@
+Ground and rock scans by Poly Haven, CC0 1.0 Universal.
+https://polyhaven.com/license
+
+Dry Ground Rocks: https://polyhaven.com/a/dry_ground_rocks
+Withered Grass: https://polyhaven.com/a/withered_grass
+Gravelly Sand: https://polyhaven.com/a/gravelly_sand
+Namaqualand Boulder 04: https://polyhaven.com/a/namaqualand_boulder_04
+
+The boulder mesh uses the reduced triangle set from the heath study.
+Color grading is applied at runtime; original scan detail is retained.

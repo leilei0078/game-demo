@@ -1,0 +1,16 @@
+import {chromium} from '@playwright/test';import assert from 'node:assert/strict';
+const browser=await chromium.launch({channel:'chrome',headless:true,args:['--use-angle=metal']});const page=await browser.newPage({viewport:{width:1440,height:960}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+const point=p=>page.evaluate(p=>window.__workers.project(p),p);
+const clickGround=async(p,button='left')=>{const q=await point(p);assert.equal(await page.evaluate(q=>document.elementFromPoint(q.x,q.y)?.id,q),'field');await page.mouse.click(q.x,q.y,{button});};
+const arrived=id=>page.waitForFunction(id=>{const w=window.__workers.sim.workers[id-1];return w.phase==='idle';},id,{timeout:30000});
+try{
+ await page.goto('http://localhost:5173/play.html');await page.waitForSelector('#field[data-ready=true]');
+ const p=await page.evaluate(()=>window.__workers.project(window.__workers.sim.workers[1],.65));await page.mouse.click(p.x,p.y);assert.deepEqual(await page.evaluate(()=>[...window.__workers.selected]),[2]);await clickGround({x:0,z:0},'right');await arrived(2);assert.ok(await page.evaluate(()=>Math.hypot(window.__workers.sim.workers[1].x,window.__workers.sim.workers[1].z)<.3));
+ await page.locator('#pan-mode').click();await page.locator('#logistics-panel summary').click();await page.locator('[data-unit="1"]').click();assert.equal(await page.locator('#pan-mode').getAttribute('aria-pressed'),'false');assert.ok(await page.locator('#logistics-form').isHidden());await page.getByRole('button',{name:'移动',exact:true}).click();await clickGround({x:0,z:2});await arrived(1);assert.ok(await page.evaluate(()=>Math.hypot(window.__workers.sim.workers[0].x,window.__workers.sim.workers[0].z-2)<.3));
+ // Drag-box selection followed by keyboard movement.
+ const ps=await page.evaluate(()=>window.__workers.sim.workers.slice(4).map(w=>window.__workers.project(w,.65)));const x1=Math.min(...ps.map(p=>p.x))-12,y1=Math.min(...ps.map(p=>p.y))-8,x2=Math.max(...ps.map(p=>p.x))+12,y2=Math.max(...ps.map(p=>p.y))+8;
+ await page.mouse.move(x1,y1);await page.mouse.down();await page.mouse.move(x2,y2,{steps:12});await page.mouse.up();assert.ok((await page.evaluate(()=>[...window.__workers.selected])).length>=8);await page.keyboard.press('m');await clickGround({x:1,z:1});await page.waitForFunction(()=>window.__workers.sim.workers.slice(4).every(w=>w.phase==='idle'),null,{timeout:45000});
+ // Escape must dismiss the panel even when a numeric input has focus.
+ await page.locator('#logistics-panel summary').click();await page.locator('input[name=maxItems]').focus();await page.keyboard.press('Escape');assert.ok(await page.locator('#logistics-form').isHidden());
+ await page.setViewportSize({width:390,height:844});await page.locator('#view-reset').click();await page.locator('#logistics-panel summary').click();await page.getByRole('button',{name:'移动',exact:true}).click();assert.ok(await page.locator('#logistics-form').isHidden());await clickGround({x:0,z:0});await page.screenshot({path:'output/workers/input-mobile.png'});assert.deepEqual(errors,[]);console.log('PASS input: canvas selection/right move, pan → roster selection, panel → move button, box select/keyboard move, Escape while editing, mobile panel dismissal and move');
+}catch(e){await page.screenshot({path:'output/workers/input-failure.png'});throw e;}finally{await browser.close();}
